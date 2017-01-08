@@ -13,7 +13,7 @@ shinyServer(function(input, output, session) {
   
   output$hc <- renderHighchart({
     
-    hc <- data_frame(time = datetime_to_timestamp(Sys.time()), value = 0) %>% 
+    hc <- data.frame(time = datetime_to_timestamp(Sys.time()), value = 0) %>% 
       hchart("line", hcaes(time, value)) %>% 
       hc_xAxis(type = "datetime") 
     
